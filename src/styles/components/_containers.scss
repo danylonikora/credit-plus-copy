@@ -1,0 +1,24 @@
+.flex--row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-container {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.section-container--row {
+  @extend .flex--row;
+  @extend .section-container;
+}
+
+.section-container--column {
+  @extend .flex--column;
+  @extend .section-container;
+}

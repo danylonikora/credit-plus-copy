@@ -1,0 +1,160 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/buttons";
+
+.calculator {
+  @extend .flex--row;
+  padding: 6rem;
+
+  @media (max-width: 1200px) {
+    padding: 2rem;
+  }
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 0px 8px rgba(103, 87, 156, 0.25);
+
+  & > *:first-child {
+    border-right: 1px solid $txt-grey;
+
+    @media (max-width: 750px) {
+      border-right: none;
+    }
+  }
+
+  &__sliders-container {
+    @extend .flex--column;
+    flex: 3;
+    gap: 4rem;
+    padding-right: 4rem;
+
+    @media (max-width: 1200px) {
+      padding-right: 2rem;
+    }
+
+    @media (max-width: 750px) {
+      padding-right: 0;
+    }
+  }
+
+  & .slider {
+    @extend .flex--column;
+    gap: 3rem;
+
+    &__info-container {
+      @extend .flex--row;
+      justify-content: space-between;
+
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $txt-dark-blue;
+    }
+
+    &__value {
+      border-bottom: 2px solid $txt-grey;
+      line-height: 150%;
+    }
+
+    &__unit {
+      color: $txt-grey;
+    }
+  }
+
+  & .conditions {
+    @extend .flex--column;
+    flex: 2;
+    gap: 2rem;
+    padding-left: 4rem;
+
+    @media (max-width: 1200px) {
+      padding-left: 2rem;
+    }
+
+    @media (max-width: 750px) {
+      padding-left: 0;
+    }
+
+    & .condition {
+      @extend .flex--row;
+      justify-content: space-between;
+
+      &__name {
+        color: rgba(0, 51, 102, 0.5);
+      }
+    }
+
+    &__btn-get-money {
+      @extend .btn--orange;
+      margin-top: 2rem;
+      align-self: center;
+  
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    &__promo-input-container {
+      position: relative;
+    }
+
+    &__promo-input {
+      padding: .8rem;
+      font-family: inherit;
+      color: inherit;
+      border-radius: 4px;
+      border: 1px solid #CCD5DF;
+      font-size: 1.5rem;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $btn-orange;
+        transition: border .3s ease-out;
+      }
+
+      &--error {
+        border: 1px solid #FF3306;
+      }
+    }
+
+    &__close-promo {
+      width: 15px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      cursor: pointer;
+    }
+
+    &__promo-error {
+      color: #FF3306;
+      font-size: 90%;
+    }
+  
+    &__promo {
+      align-self: center;
+  
+      cursor: pointer;
+      border-bottom: 1px solid $btn-blue;
+      line-height: 150%;
+      color: $btn-blue;
+      font-weight: 500;
+    }
+
+    &__success-container {
+      @extend .flex--row;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    &__promo-success {
+      font-weight: 500;
+      color: #19C788;
+    }
+  }
+}

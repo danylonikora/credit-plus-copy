@@ -1,0 +1,39 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+
+.benefits {
+  @extend .section-container;
+
+  &__header {
+    @extend .heading--2;
+    margin-bottom: 6rem;
+
+    text-align: center;
+  }
+
+  & .tab-box__content {
+    @extend .flex--row;
+    flex-wrap: wrap;
+    gap: 4rem;
+
+    @media (max-width: 1000px) {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+  }
+
+  &__content-group {
+    @extend .flex--row;
+    gap: 2rem;
+    align-items: center;
+    flex: 1 40%;
+
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &__image {
+    width: 7rem;
+  }
+}

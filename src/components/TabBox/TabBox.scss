@@ -1,0 +1,40 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+
+.tab-box {
+  @extend .flex--column;
+
+  border-radius: 10px;
+
+  &__headers {
+    @extend .flex--row;
+    text-align: center;
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  &__header {
+    @extend .heading--4;
+    padding: 2rem;
+
+    background-color: #E0E9F2;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    box-shadow: 0 0 8px #67579c40;
+
+    &--selected {
+      background-color: $white;
+    }
+  }
+
+  &__content {
+    padding: 3rem;
+  
+    border-radius: 0 0 10px 10px;
+    background-color: $white;
+    box-shadow: 0 6px 8px #67579c40;
+  }
+}

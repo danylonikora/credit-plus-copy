@@ -1,0 +1,90 @@
+@import "components/containers";
+@import "abstracts/vars";
+@import "components/buttons";
+
+.hero {
+  @extend .flex--column;
+  justify-content: center;
+
+  &__image {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__calculator {
+    @extend .flex--row;
+    padding: 8rem;
+
+    box-shadow: 0px 0px 8px rgba(103, 87, 156, 0.25);
+
+    & > *:first-child {
+      border-right: 1px solid $txt-grey;
+    }
+
+    & .sliders {
+      @extend .flex--column;
+      flex: 2;
+      gap: 4rem;
+      padding-right: 4rem;
+
+      & .slider {
+        @extend .flex--column;
+        gap: 3rem;
+
+        &__info-container {
+          @extend .flex--row;
+          justify-content: space-between;
+  
+          font-size: 1.8rem;
+          font-weight: 600;
+          color: $txt-dark-blue;
+        }
+  
+        &__value {
+          border-bottom: 2px solid $txt-grey;
+          line-height: 150%;
+        }
+  
+        &__unit {
+          color: $txt-grey;
+        }
+      }
+    }
+
+    & .conditions {
+      @extend .flex--column;
+      flex: 1;
+      gap: 2rem;
+      padding-left: 4rem;
+
+      & .condition {
+        @extend .flex--row;
+        justify-content: space-between;
+
+        &__name {
+          color: rgba(0, 51, 102, 0.5);
+        }
+      }
+    }
+  }
+
+  &__btn-get-money {
+    @extend .btn--orange;
+    margin-top: 2rem;
+    align-self: center;
+
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__promo {
+    align-self: center;
+
+    cursor: pointer;
+    border-bottom: 1px solid $btn-blue;
+    line-height: 150%;
+    color: $btn-blue;
+    font-weight: 500;
+  }
+}

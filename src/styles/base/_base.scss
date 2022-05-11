@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit
+}
+
+html {
+  font-size: 62.5%;
+
+  @media (max-width: 1200px) {
+    font-size: 55%;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 50%;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 46%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+
+  font-family: "Avenir Next Cyr";
+  font-size: 1.6rem;
+  color: $txt-dark-blue;
+}
+
+main {
+  padding-top: 75px;
+  margin: 0 auto;
+}
+
+main > *, .lending-services, .navbar, .footer {
+  padding-left: 20%;
+  padding-right: 20%; 
+
+  @media (max-width: 1750px) {
+    padding-left: 17%;
+    padding-right: 17%; 
+  }
+
+  @media (max-width: 1600px) {
+    padding-left: 14%;
+    padding-right: 14%; 
+  }
+
+  @media (max-width: 1450px) {
+    padding-left: 10%;
+    padding-right: 10%; 
+  }
+
+  @media (max-width: 1350px) {
+    padding-left: 7%;
+    padding-right: 7%; 
+  }
+
+  @media (max-width: 1200px) {
+    padding-left: 2%;
+    padding-right: 2%; 
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

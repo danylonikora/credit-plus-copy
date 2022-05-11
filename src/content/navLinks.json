@@ -1,0 +1,26 @@
+[
+  {
+    "to": "/yak-otrymaty",
+    "content": "Як отримати"
+  },
+  {
+    "to": "/yak-koristuvatisya",
+    "content": "Як користуватися"
+  },
+  {
+    "to": "/yak-pogasiti",
+    "content": "Як погасити"
+  },
+  {
+    "to": "/dovidka",
+    "content": "Довідка"
+  },
+  {
+    "to": "/about",
+    "content": "Про нас"
+  },
+  {
+    "to": "/news",
+    "content": "Новини"
+  }
+]

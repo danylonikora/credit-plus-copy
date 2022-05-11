@@ -1,0 +1,23 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/buttons";
+@import "components/headings";
+
+.not-found {
+  @extend .flex--column;
+  gap: 6rem;
+  align-items: center;
+  margin-bottom: 100px;
+
+
+  &__heading {
+    @extend .heading--2;
+    margin-top: 175px;
+
+    text-align: center;
+  }
+
+  &__btn {
+    @extend .btn--orange;
+  }
+}

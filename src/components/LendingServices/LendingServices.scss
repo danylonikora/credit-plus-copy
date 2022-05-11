@@ -1,0 +1,61 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+
+.lending-services {
+  @extend .section-container;
+  @extend .flex--column;
+
+  &__heading {
+    @extend .heading--2;
+    margin-bottom: 4rem;
+
+    text-align: center;
+  }
+
+  &__links {
+    @extend .flex--row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+
+    &--mobile {
+      @extend .flex--column;
+      height: 180px;
+      overflow: hidden;
+    }
+  }
+
+  &__link {
+    padding: 1rem;
+
+    color: $btn-blue;
+    box-shadow: 0px 2px 10px rgba(0, 51, 102, 0.15);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.4rem;
+
+    &--mobile {
+      @extend .flex--row;
+      padding: 1rem;
+      justify-content: space-between;
+  
+      border-bottom: 1px solid #e0e9f2;
+    }
+
+    &:hover {
+      color: $txt-blue;
+      transition: color 0.3s ease-out;
+    }
+  }
+
+  &__show-more {
+    align-self: center;
+    margin-top: 2rem;
+
+    font-weight: 600;
+    color: $btn-orange;
+    border-bottom: 1px solid $btn-orange;
+    cursor: pointer;
+  }
+}

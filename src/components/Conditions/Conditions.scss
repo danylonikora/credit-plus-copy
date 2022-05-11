@@ -1,0 +1,43 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+
+.credit-conditions {
+  @extend .section-container;
+
+  background-color: rgba($bg-grey, .5);
+
+  &__heading {
+    @extend .heading--2;
+    margin-bottom: 5rem;
+
+    text-align: center;
+  }
+
+  & .conditions-table {
+    table-layout: fixed;
+
+    border-collapse: collapse;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(103, 87, 156, 0.25);
+
+    @media (max-width: 450px) {
+      box-sizing: border-box;
+    }
+
+    & th {
+      font-weight: 600;
+    }
+
+    & th, td {
+      border: 1px solid $bg-grey;
+      padding: 2rem;
+      line-height: 150%;
+    }
+
+    & td[colspan="2"] {
+      text-align: center;
+    }
+  }
+}

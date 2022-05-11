@@ -1,0 +1,10 @@
+@import "components/containers";
+
+.phone-info {
+  @extend .flex--column;
+  gap: 5px;
+
+  &__number {
+    text-decoration: underline;
+  }
+}
