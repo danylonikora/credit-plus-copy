@@ -8,18 +8,18 @@ import "./Testimonials.scss";
 import locales from "../../locales";
 
 function Testimonials() {
-  const [isTablet, setIsTablet] = useState(isMediaMatch(900));
-  const [isPhone, setIsPhone] = useState(isMediaMatch(600));
+  const [isTablet, setIsTablet] = useState(isMediaMatch(1000));
+  const [isPhone, setIsPhone] = useState(isMediaMatch(650));
 
   useEffect(() => {
     const glide = new Glide(".glide", {
       type: "slider",
       perView: 3,
       bound: true,
-      gap: 30,
+      gap: 0,
       breakpoints: {
-        900: { perView: 2, autoplay: 3000 },
-        600: { perView: 1, autoplay: 3000 },
+        1000: { perView: 2, autoplay: 3000 },
+        650: { perView: 1, autoplay: 3000 },
       },
     }).mount();
 
@@ -32,11 +32,11 @@ function Testimonials() {
 
   useEffect(() => {
     window
-      .matchMedia("(max-width: 900px)")
+      .matchMedia("(max-width: 1000px)")
       .addEventListener("change", (e) => setIsTablet(e.matches));
 
     window
-      .matchMedia("(max-width: 600px)")
+      .matchMedia("(max-width: 650px)")
       .addEventListener("change", (e) => setIsPhone(e.matches));
   }, []);
 
