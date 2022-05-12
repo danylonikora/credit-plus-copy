@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "development",
   output: {
     path: path.resolve(__dirname, "docs"),
     clean: true,
@@ -19,8 +18,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
         test: /\.svg$/i,
-        issuer: { not: [/\.scss$/i] },
+        issuer: { not: [/\.scss$/i, /\.html$/i] },
         use: [
           {
             loader: "@svgr/webpack",
