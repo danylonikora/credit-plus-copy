@@ -6,11 +6,11 @@ import "./styles/index.scss";
 import locales from "./locales";
 
 const root = createRoot(document.getElementById("react-root"));
-const userLanguage =
-  locales.getInterfaceLanguage().slice(0, 2) === "ru" || "uk";
+const language =
+  locales.getInterfaceLanguage().slice(0, 2) === "ru" ? "ru" : "uk";
 
 root.render(
   <BrowserRouter basename="credit-plus-copy">
-    <App language={userLanguage} />
+    <App language={language} />
   </BrowserRouter>
 );
