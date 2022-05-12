@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
+import locales from "../../locales";
 import PhoneInfo from "../PhoneInfo/PhoneInfo";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import isMediaMatch from "../../utils/isMediaMatch";
-import navLinks from "../../content/navLinks.json";
 import LogoSvg from "../../assets/images/logo.svg";
 import EnterSvg from "../EnterSvg/EnterSvg";
 import BurgerTogglerSvg from "../../assets/images/burger-menu-toggler.svg";
 import "./Navbar.scss";
+import { LanguageContext } from "../../App";
 
 function Navbar() {
   const [isBurgerActive, setIsBurgerActive] = useState(false);
@@ -15,10 +16,29 @@ function Navbar() {
     isMediaMatch(1200)
   );
   const [isMobile, setIsMobile] = useState(isMediaMatch(400));
+  const [language, setLanguage] = useContext(LanguageContext);
 
   const burgerTogglerRef = useRef();
+  const ukTogglerRef = useRef();
+  const ruTogglerRef = useRef();
 
   useEffect(() => {
+    const activeClass = "navbar__language--selected";
+    if (!ukTogglerRef.current) return;
+
+    if (language === "uk") {
+      ruTogglerRef.current.classList.remove(activeClass);
+      ukTogglerRef.current.classList.add(activeClass);
+    } else {
+      ukTogglerRef.current.classList.remove(activeClass);
+      ruTogglerRef.current.classList.add(activeClass);
+    }
+  }, [language, isTabletOrNotebook, isMobile]);
+
+  useEffect(() => {
+    if (!isTabletOrNotebook) {
+    }
+
     if (isTabletOrNotebook) {
       burgerTogglerRef.current.addEventListener("click", () => {
         setIsBurgerActive((prev) => !prev);
@@ -46,27 +66,32 @@ function Navbar() {
       </Link>
       {!isTabletOrNotebook && (
         <>
-          {navLinks.map((link) => (
+          {locales.navbar.navLinks.map((link) => (
             <Link to={link.to} className="navbar__link" key={link.content}>
               {link.content}
             </Link>
           ))}
           <PhoneInfo color="#003366" />
           <div className="navbar__language">
-            <span className="navbar__language--ua navbar__language--selected">
+            <span
+              className="navbar__language--ua"
+              ref={ukTogglerRef}
+              onClick={() => setLanguage("uk")}
+            >
               UA
             </span>
-            <a
+            <span
               className="navbar__language--ru"
-              href="https://dani-armani.github.io/credit-plus-copy/ru"
+              ref={ruTogglerRef}
+              onClick={() => setLanguage("ru")}
             >
               RU
-            </a>
+            </span>
           </div>
           <div>
             <a className="navbar__enter-btn" href="#">
               <EnterSvg color="white" />
-              Увійти
+              {locales.navbar.enter}
             </a>
           </div>
         </>
@@ -78,13 +103,13 @@ function Navbar() {
               <>
                 <EnterSvg color="orange" />
                 <a className="navbar__enter" href="#">
-                  Увійти
+                  {locales.navbar.enter}
                 </a>
               </>
             ) : (
               <a className="navbar__enter-btn" href="#">
                 <EnterSvg color="white" />
-                Увійти
+                {locales.navbar.enter}
               </a>
             )}
           </div>

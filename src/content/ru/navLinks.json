@@ -1,0 +1,26 @@
+[
+  {
+    "to": "/kak-poluchit",
+    "content": "Как получить"
+  },
+  {
+    "to": "/kak-polzovatsa",
+    "content": "Как пользоваться"
+  },
+  {
+    "to": "/kak-pogasit",
+    "content": "Как погасить"
+  },
+  {
+    "to": "/spravka",
+    "content": "Справка"
+  },
+  {
+    "to": "/about",
+    "content": "О нас"
+  },
+  {
+    "to": "/news",
+    "content": "Новости"
+  }
+]

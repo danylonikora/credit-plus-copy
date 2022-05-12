@@ -4,6 +4,7 @@ import formatCurrency from "../../utils/formatCurrency";
 import CrossSvg from "../../assets/images/burger-menu-close.svg";
 import PromoSuccessSvg from "../../assets/images/conditions-promo-success.svg";
 import "./Calculator.scss";
+import locales from "../../locales";
 
 function Calculator() {
   const [sum, setSum] = useState(5000);
@@ -35,10 +36,13 @@ function Calculator() {
       <div className="calculator__sliders-container">
         <div className="slider">
           <div className="slider__info-container">
-            <span className="slider__name">Cума:</span>
+            <span className="slider__name">{locales.calculator.sum}</span>
             <span className="slider__value">
               {sum}
-              <span className="slider__unit"> грн</span>
+              <span className="slider__unit">
+                {" "}
+                {locales.calculator.shortCurrency}
+              </span>
             </span>
           </div>
           <RangeSlider
@@ -48,16 +52,18 @@ function Calculator() {
             name="sum"
             value={sum}
             handleChange={setSum}
-            unit="грн"
+            unit={locales.calculator.shortCurrency}
           />
         </div>
 
         <div className="slider">
           <div className="slider__info-container">
-            <span className="slider__name">Строк платежу:</span>
+            <span className="slider__name">
+              {locales.calculator.paymentTerm}
+            </span>
             <span className="slider__value">
               {days}
-              <span className="slider__unit"> днів</span>
+              <span className="slider__unit"> {locales.calculator.days}</span>
             </span>
           </div>
           <RangeSlider
@@ -67,17 +73,19 @@ function Calculator() {
             name="days"
             value={days}
             handleChange={setDays}
-            unit="днів"
+            unit={locales.calculator.days}
           />
         </div>
       </div>
       <div className="conditions">
         <div className="condition">
-          <span className="condition__name">Берете</span>
+          <span className="condition__name">{locales.calculator.take}</span>
           <span className="condition__amount">{formatCurrency(sum)}</span>
         </div>
         <div className="condition">
-          <span className="condition__name">Відсотки</span>
+          <span className="condition__name">
+            {locales.calculator.percentages}
+          </span>
           <span className="condition__amount">
             {formatCurrency(
               ((days * (discount ? 0.01 : 0.5)) / 100 + 1) * sum - sum
@@ -86,7 +94,7 @@ function Calculator() {
         </div>
         <div className="condition">
           <span className="condition__name">
-            Віддаєте до{" "}
+            {locales.calculator.repayTo}{" "}
             {new Date(
               Date.now() + days * 1000 * 60 * 60 * 24
             ).toLocaleDateString("uk-UA")}
@@ -96,7 +104,7 @@ function Calculator() {
           </span>
         </div>
         <a href="#" className="conditions__btn-get-money">
-          Отримати гроші
+          {locales.calculator.getMoney}
         </a>
         {promoCodeInput && (
           <div className="conditions__promo-input-container">
@@ -106,7 +114,7 @@ function Calculator() {
               type="text"
               value={promoCode}
               onChange={(e) => setPromoCode(e.target.value)}
-              placeholder="Промокод"
+              placeholder={locales.calculator.promoCode}
             />
             <CrossSvg
               className="conditions__close-promo"
@@ -118,7 +126,7 @@ function Calculator() {
             />
             {promoCodeError && (
               <span className="conditions__promo-error">
-                Зазначений промокод не знайдений або не дійсний
+                {locales.calculator.invalidPromoCode}
               </span>
             )}
           </div>
@@ -128,7 +136,7 @@ function Calculator() {
           <div className="conditions__success-container">
             <PromoSuccessSvg className="conditions__success-icon" />
             <span className="conditions__promo-success">
-              Промокод застосовано
+              {locales.calculator.usedPromoCode}
             </span>
           </div>
         ) : (
@@ -138,7 +146,9 @@ function Calculator() {
               promoCodeInput ? validatePromoCode() : setPromoCodeInput(true)
             }
           >
-            {promoCodeInput ? "Застосувати" : "Маю промокод"}
+            {promoCodeInput
+              ? locales.calculator.usePromoCode
+              : locales.calculator.havePromoCode}
           </span>
         )}
       </div>

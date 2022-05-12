@@ -1,22 +1,22 @@
 import React from "react";
-import conditionsTable from "../../content/conditionsTable.json";
 import "./Conditions.scss";
+import locales from "../../locales";
 
 function Conditions() {
   return (
     <section className="credit-conditions">
-      <h2 className="credit-conditions__heading">Умови кредитного продукту</h2>
+      <h2 className="credit-conditions__heading">{locales.conditions.heading}</h2>
       <div style={{ overflowX: "auto" }}>
         <table className="conditions-table">
           <thead>
             <tr>
-              {conditionsTable[0].map((heading) => (
+              {locales.conditions.conditionsTable[0].map((heading) => (
                 <th key={heading}>{heading}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {conditionsTable.slice(1).map((row, i) => {
+            {locales.conditions.conditionsTable.slice(1).map((row, i) => {
               return (
                 <tr key={i + 1}>
                   {row.map((text, i) => {
