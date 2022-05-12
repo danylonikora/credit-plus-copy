@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import lendingServicesLinks from "../../content/lendingServicesLinks.json";
 import isMediaMatch from "../../utils/isMediaMatch";
 import ArrowSvg from "../../assets/images/lending-services-right-arrow.svg";
 import "./LendingServices.scss";
+import locales from "../../locales";
 
 function LendingServices() {
   const [isPhone, setIsPhone] = useState(isMediaMatch(500));
@@ -40,11 +40,17 @@ function LendingServices() {
 
   return (
     <section className="lending-services">
-      <h2 className="lending-services__heading">Послуги кредитування</h2>
+      <h2 className="lending-services__heading">
+        {locales.lendingServices.heading}
+      </h2>
       {!isPhone && (
         <div className="lending-services__links">
-          {lendingServicesLinks.map((link) => (
-            <Link className="lending-services__link" to={link.link} key={link.content}>
+          {locales.lendingServices.lendingServicesLinks.map((link) => (
+            <Link
+              className="lending-services__link"
+              to={link.link}
+              key={link.content}
+            >
               {link.content}
             </Link>
           ))}
@@ -53,15 +59,21 @@ function LendingServices() {
       {isPhone && (
         <>
           <div className="lending-services__links--mobile" ref={linksMobileRef}>
-            {lendingServicesLinks.map((link) => (
-              <Link className="lending-services__link--mobile" to={link.link} key={link.content}>
+            {locales.lendingServices.lendingServicesLinks.map((link) => (
+              <Link
+                className="lending-services__link--mobile"
+                to={link.link}
+                key={link.content}
+              >
                 <span>{link.content}</span>
                 <ArrowSvg className="lending-services__right-arrow-icon" />
               </Link>
             ))}
           </div>
           <span className="lending-services__show-more" ref={showMoreRef}>
-            {isShowMore ? "Показати менше" : "Показати більше"}
+            {isShowMore
+              ? locales.lendingServices.showMore
+              : locales.lendingServices.showLess}
           </span>
         </>
       )}

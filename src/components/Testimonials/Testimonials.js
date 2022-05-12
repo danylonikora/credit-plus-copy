@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Review from "../Review/Review";
-import reviews from "../../content/reviews.json";
 import Glide from "@glidejs/glide";
 import isMediaMatch from "../../utils/isMediaMatch";
 import LeftArrowSvg from "../../assets/images/glide-arrow-left.svg";
 import RightArrowSvg from "../../assets/images/glide-arrow-right.svg";
 import "./Testimonials.scss";
+import locales from "../../locales";
 
 function Testimonials() {
   const [isTablet, setIsTablet] = useState(isMediaMatch(900));
@@ -42,12 +42,12 @@ function Testimonials() {
 
   return (
     <section className="testimonials">
-      <h2 className="testimonials__heading">Відгуки наших клієнтів</h2>
+      <h2 className="testimonials__heading">{locales.testimonials.heading}</h2>
       <div className="glide">
         <div className="glide__track" data-glide-el="track">
           <div className="glide__slides">
-            {reviews.map((content, i) => (
-              <Review {...content} key={i}/>
+            {locales.testimonials.reviews.map((content, i) => (
+              <Review {...content} key={i} />
             ))}
           </div>
         </div>

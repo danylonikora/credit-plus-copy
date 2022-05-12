@@ -1,5 +1,6 @@
 import React from "react";
 import "./PhoneInfo.scss";
+import locales from "../../locales";
 
 function PhoneInfo({ color }) {
   return (
@@ -7,7 +8,7 @@ function PhoneInfo({ color }) {
       <a className="phone-info__number" href="tel:0800753363">
         0 800 753 363
       </a>
-      <span>безкоштовно по Україні</span>
+      <span>{locales.phoneInfo.freeAcrossUrkaine}</span>
     </div>
   );
 }

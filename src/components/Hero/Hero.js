@@ -14,7 +14,6 @@ function Hero() {
           src={heroPng}
           width="1170"
           height="360"
-          alt="Главный банер"
         />
       </picture>
       <Calculator />

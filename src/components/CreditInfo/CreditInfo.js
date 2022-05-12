@@ -1,8 +1,7 @@
 import React from "react";
 import TabBox from "../TabBox/TabBox";
-import takeOnline from "../../content/takeOnline.json";
-import repayOnline from "../../content/repayOnline.json";
 import "./CreditInfo.scss";
+import locales from "../../locales";
 
 function CreditInfo() {
   function generateContentGroups(contentSource) {
@@ -20,10 +19,10 @@ function CreditInfo() {
   return (
     <section className="credit-info">
       <TabBox
-        firstTabHeader="Як взяти кредит онлайн"
-        secondTabHeader="Як повернути кредит онлайн"
-        firstTabContent={generateContentGroups(takeOnline)}
-        secondTabContent={generateContentGroups(repayOnline)}
+        firstTabHeader={locales.creditInfo.heading1}
+        secondTabHeader={locales.creditInfo.heading2}
+        firstTabContent={generateContentGroups(locales.creditInfo.takeOnline)}
+        secondTabContent={generateContentGroups(locales.creditInfo.repayOnline)}
       />
     </section>
   );
