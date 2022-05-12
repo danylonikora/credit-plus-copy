@@ -1,5 +1,5 @@
-import React, { useState, createContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState, createContext, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import locales from "./locales";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
@@ -11,11 +11,15 @@ function App(props) {
   // language
 
   const [language, setLang] = useState(props.language);
-
   function setLanguage(lang) {
     locales.setLanguage(lang);
     setLang(lang);
   }
+
+  const locationObject = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [locationObject])
 
   return (
     <>
