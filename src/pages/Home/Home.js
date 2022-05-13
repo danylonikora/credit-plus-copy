@@ -4,6 +4,7 @@ import Benefits from "../../components/Benefits/Benefits";
 import CreditInfo from "../../components/CreditInfo/CreditInfo";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import Conditions from "../../components/Conditions/Conditions";
+import Partners from "../../components/Partners/Partners";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Benefits />
       <CreditInfo />      
       <Testimonials />
+      <Partners />
       <Conditions />
     </main>
   );

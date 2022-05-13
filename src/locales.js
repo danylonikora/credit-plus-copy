@@ -93,6 +93,9 @@ const locales = new LocalizedStrings({
       showMore: "Показати більше",
       showLess: "Показати менше",
     },
+    partners: {
+      heading: "Наші партнери",
+    },
     phoneInfo: {
       freeAcrossUrkaine: "безкоштовно по Україні",
     },
@@ -172,6 +175,9 @@ const locales = new LocalizedStrings({
       lendingServicesLinks: lendingServicesLinksRu,
       showMore: "Показать больше",
       showLess: "Показать меньше",
+    },
+    partners: {
+      heading: "Наши партнеры",
     },
     phoneInfo: {
       freeAcrossUrkaine: "бесплатно по Украине",
