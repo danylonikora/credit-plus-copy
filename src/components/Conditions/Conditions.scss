@@ -5,8 +5,6 @@
 .credit-conditions {
   @extend .section-container;
 
-  background-color: rgba($bg-grey, .5);
-
   &__heading {
     @extend .heading--2;
     margin-bottom: 5rem;
@@ -14,8 +12,14 @@
     text-align: center;
   }
 
+  &__table-container {
+    overflow-x: auto;
+  }
+
   & .conditions-table {
     table-layout: fixed;
+    overflow: hidden;
+    margin: 10px;
 
     border-collapse: collapse;
     background-color: $white;

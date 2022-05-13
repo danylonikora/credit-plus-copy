@@ -6,7 +6,7 @@ function Conditions() {
   return (
     <section className="credit-conditions">
       <h2 className="credit-conditions__heading">{locales.conditions.heading}</h2>
-      <div style={{ overflowX: "auto" }}>
+      <div className="credit-conditions__table-container">
         <table className="conditions-table">
           <thead>
             <tr>
