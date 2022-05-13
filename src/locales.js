@@ -103,6 +103,10 @@ const locales = new LocalizedStrings({
       heading: "Відгуки наших клієнтів",
       reviews: reviews,
     },
+    notFound: {
+      heading: "Сторінка не знайдена або контент на цій сторінці поки відсутній",
+      mainPage: "Головна сторінка"
+    }
   },
   ru: {
     navbar: {
@@ -186,6 +190,10 @@ const locales = new LocalizedStrings({
       heading: "Отзывы наших клиентов",
       reviews: reviewsRu,
     },
+    notFound: {
+      heading: "Страница не найдена или контент на этой странице пока отсутствует",
+      mainPage: "Главная страница"
+    }
   },
 });
 
