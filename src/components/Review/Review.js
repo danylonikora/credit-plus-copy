@@ -35,7 +35,7 @@ function Review(props) {
         </div>
         <div className="review__info-row-2">
           <span className="review__date">
-            {new Date(+props.timestamp).toLocaleDateString()}
+            {new Date(+props.timestamp).toLocaleDateString("uk-UA")}
           </span>
           <span className="review__location">{props.location}</span>
         </div>
