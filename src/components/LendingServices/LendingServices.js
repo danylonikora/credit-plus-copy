@@ -72,8 +72,8 @@ function LendingServices() {
           </div>
           <span className="lending-services__show-more" ref={showMoreRef}>
             {isShowMore
-              ? locales.lendingServices.showMore
-              : locales.lendingServices.showLess}
+              ? locales.lendingServices.showLess
+              : locales.lendingServices.showMore}
           </span>
         </>
       )}
