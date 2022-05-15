@@ -37,6 +37,7 @@ function RangeSlider(props) {
     <div className="range-slider">
       <div className="range-slider__slider">
         <div
+          data-testid="minus"
           className="range-slider__control"
           onClick={() =>
             props.handleChange((prev) => validate(prev - props.step))
@@ -57,6 +58,7 @@ function RangeSlider(props) {
         />
         <div
           className="range-slider__control"
+          data-testid="plus"
           onClick={() =>
             props.handleChange((prev) => validate(prev + props.step))
           }
