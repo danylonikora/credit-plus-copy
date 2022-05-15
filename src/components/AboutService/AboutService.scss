@@ -1,0 +1,64 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+
+.about-service {
+  @extend .section-container;
+  padding-top: 0;
+
+  &__heading {
+    @extend .heading--2;
+    margin-bottom: 6rem;
+
+    text-align: center;
+  }
+
+  &__link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &__bold {
+    font-weight: 600;
+  }
+
+  &__content {
+    @extend .flex--column;
+
+    & *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    & * {
+      // font-size: 1.4rem;
+      line-height: 150%;
+    }
+
+    & h4 {
+      @extend .heading--4;
+    }
+
+    & ul {
+      list-style: disc;
+
+      & li::marker {
+        color: $btn-orange;
+        font-size: 2rem;
+      }
+    }
+
+    & ol {
+      list-style: decimal;
+
+      & li::marker {
+        color: $btn-blue;
+        font-weight: 600;
+        font-size: 2rem;
+      }
+    }
+
+    & li {
+      margin-left: 20px;
+    }
+  }
+}

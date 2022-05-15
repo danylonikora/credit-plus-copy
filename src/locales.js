@@ -9,6 +9,7 @@ import repayOnline from "./content/repayOnline.json";
 import reviews from "./content/reviews.json";
 import takeOnline from "./content/takeOnline.json";
 import usefulLinks from "./content/usefulLinks.json";
+import aboutService from "./content/aboutService.json";
 
 import conditionsTableRu from "./content/ru/conditionsTable.json";
 import lendingServicesLinksRu from "./content/ru/lendingServicesLinks.json";
@@ -19,6 +20,7 @@ import repayOnlineRu from "./content/ru/repayOnline.json";
 import reviewsRu from "./content/ru/reviews.json";
 import takeOnlineRu from "./content/ru/takeOnline.json";
 import usefulLinksRu from "./content/ru/usefulLinks.json";
+import aboutServiceRu from "./content/ru/aboutService.json";
 
 const locales = new LocalizedStrings({
   uk: {
@@ -104,9 +106,14 @@ const locales = new LocalizedStrings({
       reviews: reviews,
     },
     notFound: {
-      heading: "Сторінка не знайдена або контент на цій сторінці поки відсутній",
-      mainPage: "Головна сторінка"
-    }
+      heading:
+        "Сторінка не знайдена або контент на цій сторінці поки відсутній",
+      mainPage: "Головна сторінка",
+    },
+    aboutService: {
+      heading: "Про сервіс онлайн-кредитування CreditPlus",
+      content: aboutService,
+    },
   },
   ru: {
     navbar: {
@@ -191,8 +198,13 @@ const locales = new LocalizedStrings({
       reviews: reviewsRu,
     },
     notFound: {
-      heading: "Страница не найдена или контент на этой странице пока отсутствует",
-      mainPage: "Главная страница"
+      heading:
+        "Страница не найдена или контент на этой странице пока отсутствует",
+      mainPage: "Главная страница",
+    },
+    aboutService: {
+      heading: "О сервисе онлайн-кредитования CreditPlus",
+      content: aboutServiceRu
     }
   },
 });
