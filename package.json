@@ -23,6 +23,7 @@
     "@svgr/webpack": "^6.2.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^14.2.0",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "html-loader": "^3.1.0",
