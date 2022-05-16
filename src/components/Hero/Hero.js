@@ -16,7 +16,7 @@ function Hero() {
           height="360"
         />
       </picture>
-      <Calculator />
+      <Calculator initialDays={15} initialSum={5000} />
     </section>
   );
 }

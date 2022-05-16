@@ -5,10 +5,13 @@ import CrossSvg from "../../assets/images/burger-menu-close.svg";
 import PromoSuccessSvg from "../../assets/images/conditions-promo-success.svg";
 import "./Calculator.scss";
 import locales from "../../locales";
+import calculateInterest from "../../utils/calculateInterest";
 
-function Calculator() {
-  const [sum, setSum] = useState(5000);
-  const [days, setDays] = useState(15);
+function Calculator(props) {
+  // initialSum, initialDays
+
+  const [sum, setSum] = useState(props.initialSum);
+  const [days, setDays] = useState(props.initialDays);
   const [promoCode, setPromoCode] = useState("GET DISCOUNT");
   const [promoCodeInput, setPromoCodeInput] = useState(false);
   const [discount, setDiscount] = useState(false);
@@ -87,9 +90,7 @@ function Calculator() {
             {locales.calculator.percentages}
           </span>
           <span className="condition__amount">
-            {formatCurrency(
-              ((days * (discount ? 0.01 : 0.5)) / 100 + 1) * sum - sum
-            )}
+            {formatCurrency(calculateInterest(sum, days, discount))}
           </span>
         </div>
         <div className="condition">
@@ -100,7 +101,7 @@ function Calculator() {
             ).toLocaleDateString("uk-UA")}
           </span>
           <span className="condition__amount">
-            {formatCurrency(((days * (discount ? 0.01 : 0.5)) / 100 + 1) * sum)}
+            {formatCurrency(calculateInterest(sum, days, discount) + sum)}
           </span>
         </div>
         <a href="#" className="conditions__btn-get-money">
