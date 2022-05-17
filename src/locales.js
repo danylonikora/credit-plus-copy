@@ -10,6 +10,7 @@ import reviews from "./content/reviews.json";
 import takeOnline from "./content/takeOnline.json";
 import usefulLinks from "./content/usefulLinks.json";
 import aboutService from "./content/aboutService.json";
+import about from "./content/about.json";
 
 import conditionsTableRu from "./content/ru/conditionsTable.json";
 import lendingServicesLinksRu from "./content/ru/lendingServicesLinks.json";
@@ -21,6 +22,7 @@ import reviewsRu from "./content/ru/reviews.json";
 import takeOnlineRu from "./content/ru/takeOnline.json";
 import usefulLinksRu from "./content/ru/usefulLinks.json";
 import aboutServiceRu from "./content/ru/aboutService.json";
+import aboutRu from "./content/ru/about.json";
 
 const locales = new LocalizedStrings({
   uk: {
@@ -114,6 +116,7 @@ const locales = new LocalizedStrings({
       heading: "Про сервіс онлайн-кредитування CreditPlus",
       content: aboutService,
     },
+    about: about,
   },
   ru: {
     navbar: {
@@ -204,8 +207,9 @@ const locales = new LocalizedStrings({
     },
     aboutService: {
       heading: "О сервисе онлайн-кредитования CreditPlus",
-      content: aboutServiceRu
-    }
+      content: aboutServiceRu,
+    },
+    about: aboutRu,
   },
 });
 
