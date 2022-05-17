@@ -11,8 +11,8 @@ function AboutService() {
         <h4>{locales.aboutService.content.heading1}</h4>
         <p>{locales.aboutService.content.paragraph1_1}</p>
         <ul>
-          {locales.aboutService.content.ul1.map((text) => (
-            <li>{text}</li>
+          {locales.aboutService.content.ul1.map((text, i) => (
+            <li key={i}>{text}</li>
           ))}
         </ul>
         <p>{locales.aboutService.content.paragraph1_2}</p>
@@ -21,14 +21,14 @@ function AboutService() {
         <p>{locales.aboutService.content.paragraph2_2}</p>
         <h4>{locales.aboutService.content.heading3}</h4>
         <ul>
-          {locales.aboutService.content.ul2.map((text) => (
-            <li>{text}</li>
+          {locales.aboutService.content.ul2.map((text, i) => (
+            <li key={i}>{text}</li>
           ))}
         </ul>
         <h4>{locales.aboutService.content.heading4}</h4>
         <ol>
-          {locales.aboutService.content.ol1.map((text) => (
-            <li>{text}</li>
+          {locales.aboutService.content.ol1.map((text, i) => (
+            <li key={i}>{text}</li>
           ))}
         </ol>
         <h4>{locales.aboutService.content.heading5}</h4>
@@ -36,8 +36,8 @@ function AboutService() {
         <p>{locales.aboutService.content.paragraph5_2}</p>
         <h4>{locales.aboutService.content.heading6}</h4>
         <ul>
-          {locales.aboutService.content.ul3.map((text) => (
-            <li>
+          {locales.aboutService.content.ul3.map((text, i) => (
+            <li key={i}>
               <a href="#" className="markdown__link">
                 {text}
               </a>
@@ -55,14 +55,18 @@ function AboutService() {
           {locales.aboutService.content.ul4.map((text, i) => {
             if (i === 0) {
               return (
-                <li>
+                <li key={i}>
                   <a href="#" className="markdown__link">
                     {text}
                   </a>
                 </li>
               );
             } else {
-              return <li className="markdown__bold">{text}</li>;
+              return (
+                <li key={i} className="markdown__bold">
+                  {text}
+                </li>
+              );
             }
           })}
         </ul>
