@@ -1,6 +1,7 @@
 import React from "react";
 import AvatarSvg from "../../assets/images/avatar.svg";
 import "./Review.scss";
+import formatDate from "../../utils/formatDate";
 
 function Review(props) {
   // name, rating, location, timestamp, content
@@ -35,7 +36,7 @@ function Review(props) {
         </div>
         <div className="review__info-row-2">
           <span className="review__date">
-            {new Date(+props.timestamp).toLocaleDateString("uk-UA")}
+            {formatDate(Number(props.timestamp))}
           </span>
           <span className="review__location">{props.location}</span>
         </div>

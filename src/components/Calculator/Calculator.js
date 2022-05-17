@@ -6,6 +6,7 @@ import PromoSuccessSvg from "../../assets/images/conditions-promo-success.svg";
 import "./Calculator.scss";
 import locales from "../../locales";
 import calculateInterest from "../../utils/calculateInterest";
+import formatDate from "../../utils/formatDate";
 
 function Calculator(props) {
   // initialSum, initialDays
@@ -96,9 +97,7 @@ function Calculator(props) {
         <div className="condition">
           <span className="condition__name">
             {locales.calculator.repayTo}{" "}
-            {new Date(
-              Date.now() + days * 1000 * 60 * 60 * 24
-            ).toLocaleDateString("uk-UA")}
+            {formatDate(Date.now() + days * 1000 * 60 * 60 * 24)}
           </span>
           <span className="condition__amount">
             {formatCurrency(calculateInterest(sum, days, discount) + sum)}
