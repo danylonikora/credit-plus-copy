@@ -6,7 +6,7 @@ function AboutService() {
   return (
     <section className="about-service">
       <h2 className="about-service__heading">{locales.aboutService.heading}</h2>
-      <div className="about-service__content">
+      <div className="markdown">
         <p>{locales.aboutService.content.paragraph}</p>
         <h4>{locales.aboutService.content.heading1}</h4>
         <p>{locales.aboutService.content.paragraph1_1}</p>
@@ -38,7 +38,7 @@ function AboutService() {
         <ul>
           {locales.aboutService.content.ul3.map((text) => (
             <li>
-              <a href="#" className="about-service__link">
+              <a href="#" className="markdown__link">
                 {text}
               </a>
             </li>
@@ -56,13 +56,13 @@ function AboutService() {
             if (i === 0) {
               return (
                 <li>
-                  <a href="#" className="about-service__link">
+                  <a href="#" className="markdown__link">
                     {text}
                   </a>
                 </li>
               );
             } else {
-              return <li className="about-service__bold">{text}</li>;
+              return <li className="markdown__bold">{text}</li>;
             }
           })}
         </ul>
