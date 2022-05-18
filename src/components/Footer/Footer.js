@@ -48,12 +48,14 @@ function Footer() {
           </div>
           <div className="footer__socials-info">
             <span>{locales.footer.socials}</span>
-            <a href="#" title="Facebook">
-              <FacebookSvg />
-            </a>
-            <a href="#" title="Viber">
-              <ViberSvg />
-            </a>
+            <div className="footer__social-icons-container">
+              <a href="#" title="Facebook">
+                <FacebookSvg />
+              </a>
+              <a href="#" title="Viber">
+                <ViberSvg />
+              </a>
+            </div>
           </div>
         </div>
 

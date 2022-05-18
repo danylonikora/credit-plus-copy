@@ -9,7 +9,7 @@ import locales from "../../locales";
 import { LanguageContext } from "../../App";
 
 function BurgerMenu(props) {
-  // burgerToggler
+  // toggleBurger
 
   const [language, setLanguage] = useContext(LanguageContext);
 
@@ -20,16 +20,26 @@ function BurgerMenu(props) {
   const ruTogglerRef = useRef();
 
   useEffect(() => {
-    setTimeout(() => (burgerMenuRef.current.style.marginRight = 0), 0);
+    setTimeout(() => {
+      burgerMenuRef.current.style.marginRight = 0;
+      window.addEventListener("resize", handleResize);
+    }, 0);
     document.body.style.overflow = "hidden";
-    overlayRef.current.addEventListener("click", props.toggleBurger);
-    crossRef.current.addEventListener("click", props.toggleBurger);
+    overlayRef.current.addEventListener("click", closeBurger);
+    crossRef.current.addEventListener("click", closeBurger);
     crossRef.current.addEventListener("keydown", (event) => {
       if (event.key !== "Enter") return;
-      props.toggleBurger();
+      closeBurger();
     });
 
-    return () => (document.body.style.overflow = "visible");
+    function handleResize() {
+      burgerMenuRef.current.style.height = window.innerHeight + "px";
+    }
+
+    return () => {
+      document.body.style.overflow = "visible";
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   useEffect(() => {
@@ -43,6 +53,11 @@ function BurgerMenu(props) {
       ruTogglerRef.current.classList.add(activeClass);
     }
   }, [language]);
+
+  function closeBurger() {
+    burgerMenuRef.current.style.marginRight = "-300px";
+    setTimeout(props.toggleBurger, 200);
+  }
 
   return (
     <>
@@ -61,7 +76,7 @@ function BurgerMenu(props) {
             <Link
               to={link.to}
               className="burger-menu__link"
-              onClick={props.toggleBurger}
+              onClick={closeBurger}
               key={link.to}
             >
               {link.content}

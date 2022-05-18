@@ -112,6 +112,11 @@
     }
   }
 
+  &__social-icons-container {
+    @extend .flex--row;
+    gap: 2rem;
+  }
+
   &__useful-links {
     @extend .flex--column;
     gap: 3rem;
