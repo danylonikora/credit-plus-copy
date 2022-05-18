@@ -1,0 +1,16 @@
+.heading {
+  color: $txt-dark-blue;
+  line-height: 150%;
+}
+
+.heading--2 {
+  @extend .heading;
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+
+.heading--4 {
+  @extend .heading;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
