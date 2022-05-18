@@ -1,0 +1,160 @@
+@import "abstracts/vars";
+@import "components/containers";
+
+.footer {
+  @extend .flex--column;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  justify-content: center;
+  gap: 2rem;
+
+  font-size: 1.4rem;
+  background-color: $txt-dark-blue;
+  color: $white;
+
+  @media (max-width: 800px) {
+    gap: 5rem;
+  }
+
+  &__columnContainer_1 {
+    @extend .flex--row;
+
+    @media (min-width: 500px) and (max-width: 800px) {
+      flex-wrap: wrap;
+      gap: 5rem 2rem;
+
+      & > * {
+        flex: 2 40% !important;
+      }
+    }
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    & > *:not(:last-child) {
+      @media (max-width: 800px) {
+        border-right: none;
+      }
+
+      border-right: 1px solid #002b55;
+    }
+
+    @media (max-width: 800px) {
+      & > *:first-child {
+        border-right: 1px solid #002b55;
+      }
+    }
+
+    @media (max-width: 500px) {
+      & > * {
+        border-right: none !important;
+      }
+    }
+  }
+
+  &__contacts {
+    @extend .flex--row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex: 3;
+    padding-right: 2rem;
+
+    & > * {
+      @extend .flex--row;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+
+  &__email {
+    text-decoration: underline;
+  }
+
+  &__contactIcon {
+    max-width: 20px;
+  }
+
+  &__complainInfo {
+    padding: 2rem;
+    
+    border-radius: 4px;
+    background-color: #0E4173;
+  }
+
+  &__writeToUs {
+    cursor: pointer;
+    color: $btn-orange;
+    text-decoration: underline;
+  }
+
+  &__social {
+    @extend .flex--column;
+    gap: 5rem;
+    flex: 2;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    font-size: 1.2rem;
+
+    @media (max-width: 800px) {
+      gap: 2rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    & > * {
+      @extend .flex--row;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+  }
+
+  &__socialIconsContainer {
+    @extend .flex--row;
+    gap: 2rem;
+  }
+
+  &__usefulLinks {
+    @extend .flex--column;
+    gap: 3rem;
+    flex: 3;
+    padding-left: 2rem;
+
+    @media (max-width: 800px) {
+      gap: 2rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__links {
+    @extend .flex--row;
+    gap: 3rem;
+
+    & > * {
+      font-weight: 500;
+    }
+  }
+
+  &__documents {
+    @extend .flex--row;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    & > * {
+      font-size: 12px;
+      color: $txt-grey;
+      text-decoration: underline;
+    }
+  }
+
+  &__columnContainer_2 {
+    @extend .flex--column;
+
+    line-height: 150%;
+    color: $txt-grey;
+  }
+}
