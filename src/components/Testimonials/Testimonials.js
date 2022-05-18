@@ -54,12 +54,25 @@ function Testimonials() {
 
         {!isTablet && (
           <div className="glide__arrows" data-glide-el="controls">
-            <div className="glide__arrow glide__arrow--left" data-glide-dir="<">
+            <div
+              className="glide__arrow glide__arrow--left"
+              data-glide-dir="<"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key !== "Enter") return;
+                event.target.dispatchEvent(new Event("click"));
+              }}
+            >
               <LeftArrowSvg />
             </div>
             <div
               className="glide__arrow glide__arrow--right"
               data-glide-dir=">"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key !== "Enter") return;
+                event.target.dispatchEvent(new Event("click"));
+              }}
             >
               <RightArrowSvg />
             </div>

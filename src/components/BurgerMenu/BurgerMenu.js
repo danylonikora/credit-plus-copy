@@ -24,6 +24,10 @@ function BurgerMenu(props) {
     document.body.style.overflow = "hidden";
     overlayRef.current.addEventListener("click", props.toggleBurger);
     crossRef.current.addEventListener("click", props.toggleBurger);
+    crossRef.current.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") return;
+      props.toggleBurger();
+    });
 
     return () => (document.body.style.overflow = "visible");
   }, []);
@@ -46,7 +50,11 @@ function BurgerMenu(props) {
       <div className="burger-menu" ref={burgerMenuRef}>
         <h4 className="burger-menu__heading">
           <span>{locales.burgerMenu.heading1}</span>
-          <CrossSvg className="burger-menu__close-icon" ref={crossRef} />
+          <CrossSvg
+            className="burger-menu__close-icon"
+            ref={crossRef}
+            tabIndex={0}
+          />
         </h4>
         <nav className="burger-menu__nav">
           {locales.burgerMenu.navLinks.map((link) => (
@@ -67,9 +75,9 @@ function BurgerMenu(props) {
             <PhoneSvg />
             <PhoneInfo color="#003366" />
           </div>
-          <span className="burger-menu__recall-me">
+          <a className="burger-menu__recall-me" href="#">
             {locales.burgerMenu.recallMe}
-          </span>
+          </a>
           <div className="burger-menu__contact">
             <ClockSvg />
             <div className="burger-menu__working-hours">
@@ -82,7 +90,13 @@ function BurgerMenu(props) {
             <span
               className="burger-menu__language"
               ref={ruTogglerRef}
+              tabIndex={language === "ru" ? null : 0}
               onClick={() => setLanguage("ru")}
+              onKeyDown={(event) => {
+                if (event.key !== "Enter") return;
+                setLanguage("ru");
+              }}
+              title="Русский язык"
             >
               RU
             </span>
@@ -90,6 +104,12 @@ function BurgerMenu(props) {
               className="burger-menu__language"
               ref={ukTogglerRef}
               onClick={() => setLanguage("uk")}
+              tabIndex={language === "uk" ? null : 0}
+              onKeyDown={(event) => {
+                if (event.key !== "Enter") return;
+                setLanguage("uk");
+              }}
+              title="Українська мова"
             >
               UA
             </span>

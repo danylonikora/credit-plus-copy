@@ -76,14 +76,26 @@ function Navbar() {
             <span
               className="navbar__language--ua"
               ref={ukTogglerRef}
+              tabIndex={language === "uk" ? null : 0}
               onClick={() => setLanguage("uk")}
+              onKeyDown={(event) => {
+                if (event.key !== "Enter") return;
+                setLanguage("uk");
+              }}
+              title="Українська мова"
             >
               UA
             </span>
             <span
               className="navbar__language--ru"
               ref={ruTogglerRef}
+              tabIndex={language === "ru" ? null : 0}
               onClick={() => setLanguage("ru")}
+              onKeyDown={(event) => {
+                if (event.key !== "Enter") return;
+                setLanguage("ru");
+              }}
+              title="Русский язык"
             >
               RU
             </span>

@@ -102,6 +102,7 @@ const locales = new LocalizedStrings({
     },
     phoneInfo: {
       freeAcrossUrkaine: "безкоштовно по Україні",
+      htmlTitle: "Зателефонувати нам",
     },
     testimonials: {
       heading: "Відгуки наших клієнтів",
@@ -195,6 +196,7 @@ const locales = new LocalizedStrings({
     },
     phoneInfo: {
       freeAcrossUrkaine: "бесплатно по Украине",
+      htmlTitle: "Позвонить нам",
     },
     testimonials: {
       heading: "Отзывы наших клиентов",

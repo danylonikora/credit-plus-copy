@@ -142,6 +142,11 @@ function Calculator(props) {
         ) : (
           <span
             className="conditions__promo"
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key !== "Enter") return;
+              promoCodeInput ? validatePromoCode() : setPromoCodeInput(true);
+            }}
             onClick={() =>
               promoCodeInput ? validatePromoCode() : setPromoCodeInput(true)
             }

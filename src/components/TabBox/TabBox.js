@@ -19,7 +19,6 @@ function TabBox(props) {
       firstTab.current.classList.remove(selectedTabClass);
       secondTab.current.classList.add(selectedTabClass);
     }
-    
   }, [isFirstTab]);
 
   return (
@@ -28,14 +27,24 @@ function TabBox(props) {
         <h4
           className="tab-box__header"
           onClick={() => setIsFirstTab(true)}
+          onKeyDown={(event) => {
+            if (event.key !== "Enter") return;
+            setIsFirstTab(true);
+          }}
           ref={firstTab}
+          tabIndex={isFirstTab ? null : 0}
         >
           {props.firstTabHeader}
         </h4>
         <h4
           className="tab-box__header"
           onClick={() => setIsFirstTab(false)}
+          onKeyDown={(event) => {
+            if (event.key !== "Enter") return;
+            setIsFirstTab(false);
+          }}
           ref={secondTab}
+          tabIndex={isFirstTab ? 0 : null}
         >
           {props.secondTabHeader}
         </h4>

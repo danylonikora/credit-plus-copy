@@ -43,15 +43,15 @@ function Footer() {
           <div className="footer__mobile-info">
             <span>{locales.footer.useApp}</span>
             <a href="#">
-              <img src={googlePlayPng} />
+              <img src={googlePlayPng} title="Google Play" alt="Google Play" />
             </a>
           </div>
           <div className="footer__socials-info">
             <span>{locales.footer.socials}</span>
-            <a href="#">
+            <a href="#" title="Facebook">
               <FacebookSvg />
             </a>
-            <a href="#">
+            <a href="#" title="Viber">
               <ViberSvg />
             </a>
           </div>

@@ -14,6 +14,7 @@ function Hero() {
           src={heroPng}
           width="1170"
           height="360"
+          alt="Перший кредит онлайн до 10 000 грн під 0,01% на день"
         />
       </picture>
       <Calculator initialDays={15} initialSum={5000} />
