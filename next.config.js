@@ -15,6 +15,10 @@ module.exports = {
 
     return config;
   },
+  i18n: {
+    locales: ["uk", "ru"],
+    defaultLocale: "uk",
+  },
   sassOptions: {
     includePaths: ["./styles"],
   },
