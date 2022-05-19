@@ -1,20 +1,38 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import PhoneInfo from "../../PhoneInfo/PhoneInfo";
-import BurgerMenu from "../../BurgerMenu/BurgerMenu";
+import React, { useState, useEffect, useRef } from "react";
+import PhoneInfo from "../../common/PhoneInfo/PhoneInfo";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import isMediaMatch from "../../../utils/isMediaMatch";
 import LogoSvg from "/public/images/logo.svg";
-import EnterSvg from "../../EnterSvg/EnterSvg";
+import EnterSvg from "../../common/EnterSvg/EnterSvg";
 import BurgerTogglerSvg from "/public/images/burger-menu-toggler.svg";
 import * as styles from "./Navbar.module.scss";
 import Link from "next/link";
-import navLinks from "../../../content/navLinks.json";
+import { useRouter } from "next/router";
+import useTranslation from "../../../utils/useTranslation";
 
 function Navbar() {
   const [isBurgerActive, setIsBurgerActive] = useState(false);
   const [isTabletOrNotebook, setIsTabletOrNotebook] = useState();
   const [isMobile, setIsMobile] = useState();
+  const { locale } = useRouter();
+  const { Navbar: t } = useTranslation();
 
   const burgerTogglerRef = useRef();
+  const ukLanguageRef = useRef();
+  const ruLanguageRef = useRef();
+
+  useEffect(() => {
+    if (!ukLanguageRef.current || !ruLanguageRef.current) return;
+
+    const activeClass = styles.navbar__activeLanguage;
+    if (locale === "uk") {
+      ruLanguageRef.current.classList.remove(activeClass);
+      ukLanguageRef.current.classList.add(activeClass);
+    } else {
+      ukLanguageRef.current.classList.remove(activeClass);
+      ruLanguageRef.current.classList.add(activeClass);
+    }
+  }, [locale, isBurgerActive]);
 
   useEffect(() => {
     setIsTabletOrNotebook(isMediaMatch(1200));
@@ -51,21 +69,20 @@ function Navbar() {
       </Link>
       {!isTabletOrNotebook && (
         <>
-          {navLinks.map((link) => (
+          {t.links.map((link) => (
             <Link href={link.to} key={link.content}>
               <a className={styles.navbar__link}>{link.content}</a>
             </Link>
           ))}
           <PhoneInfo color="#003366" />
           <div className={styles.navbar__languages}>
-            <span
-              className={styles.navbar__activeLanguage}
-              title="Українська мова"
-            >
-              UA
-            </span>
+            <Link href="/" locale="uk">
+              <a title="Українська  мова" ref={ukLanguageRef}>
+                UA
+              </a>
+            </Link>
             <Link href="/" locale="ru">
-              <a tabIndex={0} title="Русский язык">
+              <a title="Русский язык" ref={ruLanguageRef}>
                 RU
               </a>
             </Link>
@@ -73,7 +90,7 @@ function Navbar() {
           <div>
             <a className={styles.navbar__enterBtn} href="#">
               <EnterSvg color="white" />
-              Увійти
+              {t.enter}
             </a>
           </div>
         </>
@@ -85,13 +102,13 @@ function Navbar() {
               <>
                 <EnterSvg color="orange" />
                 <a className={styles.navbar__enter} href="#">
-                  Увійти
+                  {t.enter}
                 </a>
               </>
             ) : (
               <a className={styles.navbar__enterBtn} href="#">
                 <EnterSvg color="white" />
-                Увійти
+                {t.enter}
               </a>
             )}
           </div>

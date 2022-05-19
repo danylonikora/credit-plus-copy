@@ -1,0 +1,179 @@
+{
+  "Navbar": {
+    "enter": "Войти",
+    "links": [
+      {
+        "to": "/kak-poluchit",
+        "content": "Как получить"
+      },
+      {
+        "to": "/kak-polzovatsa",
+        "content": "Как пользоваться"
+      },
+      {
+        "to": "/kak-pogasit",
+        "content": "Как погасить"
+      },
+      {
+        "to": "/spravka",
+        "content": "Справка"
+      },
+      {
+        "to": "/about",
+        "content": "О нас"
+      },
+      {
+        "to": "/news",
+        "content": "Новости"
+      }
+    ],
+    "BurgerMenu": {
+      "heading1": "Справочная информация",
+      "heading2": "Контактная информация",
+      "proceeding": "Обработка заявок на кредит - круглосуточно без выходных",
+      "recallMe": "Перезвоните мне",
+      "weekendSchedule": "Сб-Вс: 9:00 - 21:00",
+      "weekdaysSchedule": "Пн-Пт: 8:00 - 23:00",
+      "language": "Язык:"
+    }
+  },
+  "LendingServices": {
+    "heading": "Услуги кредитования",
+    "links": [
+      {
+        "to": "/",
+        "content": "Кредит онлайн на карту"
+      },
+      {
+        "to": "mikrozajmy-na-kartu-onlajn-za-7-minut-v-ukraine-creditplus",
+        "content": "Микрозайм на карту"
+      },
+      {
+        "to": "bystryj-zajm-onlajn-na-kartu",
+        "content": "Быстрый кредит на карту"
+      },
+      {
+        "to": "zaym-onlayn-na-kartu",
+        "content": "Займ на карту"
+      },
+      {
+        "to": "kredit-bez-procentov",
+        "content": "Кредит без процентов"
+      },
+      {
+        "to": "kredit-onlajn-na-kartu-kruglosutochno",
+        "content": "Кредит 24/7"
+      },
+      {
+        "to": "kredit-s-plohoy-kreditnoy-istoriey",
+        "content": "Кредит с плохой кредитной историей"
+      },
+      {
+        "to": "kredity-na-kartu-bez-zvonkov-v-ukraine-ot-creditplus",
+        "content": "Кредит без звонков"
+      },
+      {
+        "to": "kredit-bezrabotnym",
+        "content": "Безработным"
+      },
+      {
+        "to": "kredit-bez-spravki-o-dohodah",
+        "content": "Без справки о доходах"
+      },
+      {
+        "to": "kredit-bez-poruchiteley",
+        "content": "Без поручителей"
+      },
+      {
+        "to": "kredit-bez-oficialnogo-trudoustroystva",
+        "content": "Без официального трудоустройства"
+      },
+      {
+        "to": "kredit-s-18-let",
+        "content": "Кредит с 18 лет"
+      },
+      {
+        "to": "kredit-bez-zaloga-za-15-minut-ot-creditplus",
+        "content": "Без залога"
+      },
+      {
+        "to": "kredit-pensioneram",
+        "content": "Пенсионерам"
+      },
+      {
+        "to": "kredity-bez-proverki-kreditnoj-istorii-v-ukraine-ot-creditplus",
+        "content": "Без проверки кредитной истории"
+      },
+      {
+        "to": "kredity-studentam-onlajn-pod-001-ot-creditplus",
+        "content": "Студентам"
+      },
+      {
+        "to": "kredity-onlajn-po-pasportu-v-creditplus",
+        "content": "По паспорту"
+      },
+      {
+        "to": "kredit-onlajn-na-kartu-privatbanka-pod-001-creditplus",
+        "content": "Креди онлайн на карту ПриватБанка"
+      },
+      {
+        "to": "dengi-v-dolg",
+        "content": "Деньги в долг"
+      },
+      {
+        "to": "kredit-cherez-internet",
+        "content": "Через интернет"
+      },
+      {
+        "to": "dengi-do-zarplaty",
+        "content": "Деньги до зарплаты"
+      },
+      {
+        "to": "kak-tebe-takoe-maks",
+        "content": "Как тебе такое, Макс?"
+      },
+      {
+        "to": "aktsyya-keshbek-1000-hrn",
+        "content": "Акция Кешбэк 1000 грн"
+      }
+    ],
+    "showMore": "Показать больше",
+    "showLess": "Показать меньше"
+  },
+  "Footer": {
+    "workingHours": "Пн-Пт: 8:00 - 23:00, Сб-Вс: 9:00 - 21:00",
+    "haveComplain": "Появились жалобы на сервис?",
+    "writeUs": "Напишите нам",
+    "manageWithApp": "Управляйте кредитом через приложение CreditPlus",
+    "specialInSocials": "Эксклюзивные промокоды, розыгрыши и акции в соцсетях:",
+    "usefulLinks": [
+      {
+        "to": "/for-partners",
+        "content": "Партнерам"
+      },
+      {
+        "to": "/news",
+        "content": "Новости"
+      },
+      {
+        "to": "/documents",
+        "content": "Документы"
+      },
+      {
+        "to": "/contacts",
+        "content": "Контакты"
+      }
+    ],
+    "documents": [
+      "Согласие на обработку данных",
+      "Правила",
+      "Публичная информация",
+      "Контакты",
+      "Типовой договор"
+    ],
+    "legal": [
+      "«АВЕНТУС УКРАИНА» ЄГРПОУ 41078230. 03062, г. Киев, проспект Победы, 90-А",
+      "Свидетельство о регистрации финансового учреждения серия ФК №870 от 28.02.2017 Лицензия № 756 НКФП от 28.03.2017 Лицензия № 1860 НКФП от 24.09.2019"
+    ]
+  }
+}

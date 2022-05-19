@@ -1,0 +1,97 @@
+@import "abstracts/vars";
+@import "components/containers";
+
+.burgerMenu {
+  @extend .flex--column;
+  gap: 1rem;
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  margin-right: -300px;
+  width: 80%;
+  min-width: 150px;
+  max-width: 300px;
+  z-index: 200;
+  transition: margin-right .2s ease-out;
+
+  background-color: $white;
+
+  &__overlay {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    position: absolute;
+    z-index: 100;
+
+    background-color: rgba(black, .4);
+  }
+
+  & > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &__heading {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    font-weight: 600;
+    background-color: #F3F9FF;
+  }
+
+  &__heading:first-child {
+    @extend .flex--row;
+    justify-content: space-between;
+  }
+
+  &__close-icon {
+    cursor: pointer;
+  }
+
+  &__nav {
+    @extend .flex--column;
+    align-items: flex-start;
+  }
+
+  &__link {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__contacts {
+    @extend .flex--column;
+    gap: 2rem;
+  }
+
+  &__contact {
+    @extend .flex--row;
+    gap: 2rem;
+  }
+
+  &__recallMe {
+    align-self: center;
+    color: $btn-blue;
+    font-weight: 600;
+    border-bottom: 1px solid $btn-blue;
+    cursor: pointer;
+  }
+
+  &__workingHours {
+    @extend .flex--column;
+    gap: .5rem;
+  }
+
+  &__languages {
+    @extend .flex--row;
+    gap: 1rem;
+  }
+
+  &__languageWord, &__activeLanguage {
+    font-weight: 600;
+  }
+
+  &__language {
+    cursor: pointer;
+  }
+}

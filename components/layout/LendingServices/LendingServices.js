@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import isMediaMatch from "../../../utils/isMediaMatch";
 import ArrowSvg from "/public/images/lending-services-right-arrow.svg";
 import * as styles from "./LendingServices.module.scss";
-import lendingServicesLinks from "../../../content/lendingServicesLinks.json";
 import Link from "next/link";
+import useTranslation from "../../../utils/useTranslation";
 
 function LendingServices() {
   const [isPhone, setIsPhone] = useState();
   const [isShowMore, setIsShowMore] = useState(false);
+  const { LendingServices: t } = useTranslation();
 
   const showMoreRef = useRef();
   const linksMobileRef = useRef();
@@ -42,11 +43,11 @@ function LendingServices() {
 
   return (
     <section className={styles.lendingServices}>
-      <h2 className={styles.lendingServices__heading}>Послуги кредитування</h2>
+      <h2 className={styles.lendingServices__heading}>{t.heading}</h2>
       {!isPhone && (
         <div className={styles.lendingServices__links}>
-          {lendingServicesLinks.map((link) => (
-            <Link key={link.content} href={link.link}>
+          {t.links.map((link) => (
+            <Link key={link.content} href={link.to}>
               <a className={styles.lendingServices__link}>{link.content}</a>
             </Link>
           ))}
@@ -55,8 +56,8 @@ function LendingServices() {
       {isPhone && (
         <>
           <div className={styles.mobileLinks} ref={linksMobileRef}>
-            {lendingServicesLinks.map((link) => (
-              <Link key={link.content} href={link.link}>
+            {t.links.map((link) => (
+              <Link key={link.content} href={link.to}>
                 <a className={styles.mobileLink}>
                   <span>{link.content}</span>
                   <ArrowSvg />
@@ -65,7 +66,7 @@ function LendingServices() {
             ))}
           </div>
           <span className={styles.lendingServices__showMore} ref={showMoreRef}>
-            {isShowMore ? "Показати менше" : "Показати більше"}
+            {isShowMore ? t.showLess : t.showMore}
           </span>
         </>
       )}
