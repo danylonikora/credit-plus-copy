@@ -1,0 +1,64 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+
+.about {
+  @extend .section-container;
+
+  &__heading {
+    @extend .heading--2;
+    margin-bottom: 6rem;
+
+    text-align: left;
+  }
+
+  &__paragraphWrapper {
+    @extend .flex--row;
+    padding: 3rem;
+    align-items: center;
+
+    box-shadow: 0px 2px 15px rgba(0, 51, 102, 0.21);
+    background-color: $white;
+    border-radius: 8px;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+
+    & * {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &__link {
+    @extend .flex--row;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__linkContainer {
+    white-space: nowrap;
+    margin-left: 2rem;
+
+    @media (max-width: 800px) {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+  }
+
+  &__paragraphContainer {
+    padding-right: 2rem;
+    border-right: 1px solid #E0E9F2;
+
+    @media (max-width: 800px) {
+      padding-right: 0;
+      padding-bottom: 2rem;
+      border-right: none;
+      border-bottom: 1px solid #E0E9F2;
+    }
+  }
+
+  &__link {
+    color: $btn-orange;
+  }
+}
