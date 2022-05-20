@@ -55,10 +55,13 @@ function LendingServices() {
       )}
       {isPhone && (
         <>
-          <div className={styles.mobileLinks} ref={linksMobileRef}>
+          <div
+            className={styles.lendingServices__mobileLinks}
+            ref={linksMobileRef}
+          >
             {t.links.map((link) => (
               <Link key={link.content} href={link.to}>
-                <a className={styles.mobileLink}>
+                <a className={styles.lendingServices__mobileLink}>
                   <span>{link.content}</span>
                   <ArrowSvg />
                 </a>
