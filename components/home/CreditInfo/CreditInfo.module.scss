@@ -1,0 +1,55 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+
+.creditInfo {
+  @extend .section-container;
+
+  background-color: rgba($bg-grey, .5);
+
+  & .tabBox__content {
+    @extend .flex--row;
+    gap: 4rem;
+
+    @media (max-width: 1000px) {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+  }
+
+  &__contentGroup {
+    @extend .flex--row;
+    gap: 2rem;
+    align-items: center;
+    flex: 1;
+  }
+
+  &__step {
+    min-width: 7rem;
+    min-height: 7rem;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    color: $white;
+    font-size: 30px;
+    border-radius: 50%;
+    background-color: $btn-blue;
+  }
+
+  &__textContainer {
+    @extend .flex--column;
+    gap: 1rem;
+  }
+
+  &__heading {
+    @extend .heading--4;
+  }
+
+  &__paragraph {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}

@@ -1,0 +1,95 @@
+@import "abstracts/vars";
+@import "components/containers";
+
+.rangeSlider {
+  @extend .flex--column;
+  gap: 1rem;
+
+  $range-width: 100% !default;
+
+  $range-handle-color: $btn-blue !default;
+  $range-handle-color-hover: $txt-blue !default;
+  $range-handle-size: 15px !default;
+  $range-handle-shadow: 0 0 0 15px rgba(34, 90, 172, 0.15);
+  $range-handle-transition: background-color 0.15s ease-in-out;
+
+  $range-track-color: $btn-blue !default;
+  $range-track-height: 5px !default;
+
+  $range-label-color: $btn-blue !default;
+  $range-label-size: 25px !default;
+
+  &__container {
+    @extend .flex--row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__boundaries {
+    @extend .flex--row;
+    justify-content: space-between;
+
+    font-size: 14px;
+    color: $txt-grey;
+  }
+
+  &__track {
+    -webkit-appearance: none;
+    width: $range-width;
+    height: $range-track-height;
+
+    background-color: $range-track-color;
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: $range-handle-size;
+      height: $range-handle-size;
+
+      border-radius: 50%;
+      background-color: $range-handle-color;
+      cursor: pointer;
+      transition: $range-handle-transition;
+
+      &:hover {
+        background-color: $range-handle-color-hover;
+      }
+    }
+
+    &:active::-webkit-slider-thumb {
+      box-shadow: $range-handle-shadow;
+      background-color: $range-handle-color-hover;
+    }
+
+    &::-moz-range-thumb {
+      width: $range-handle-size;
+      height: $range-handle-size;
+
+      border: 0;
+      border-radius: 50%;
+      background-color: $range-handle-color;
+      cursor: pointer;
+      transition: $range-handle-transition;
+
+      &:hover {
+        background-color: $range-handle-color-hover;
+      }
+    }
+
+    &:active::-moz-range-thumb {
+      box-shadow: $range-handle-shadow;
+      background-color: $range-handle-color-hover;
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $range-label-size;
+    min-width: $range-label-size;
+
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: $range-label-color;
+  }
+}

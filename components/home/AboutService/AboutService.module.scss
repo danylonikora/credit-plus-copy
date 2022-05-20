@@ -1,0 +1,15 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+
+.aboutService {
+  @extend .section-container;
+  padding-top: 0;
+
+  &__heading {
+    @extend .heading--2;
+    margin-bottom: 6rem;
+
+    text-align: center;
+  }
+}
