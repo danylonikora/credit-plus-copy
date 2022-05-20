@@ -1,10 +1,17 @@
-/** @type {import('@jest/types').Config.InitialOptions} */
+const nextJest = require("next/jest");
 
-module.exports = {
+const createJestConfig = nextJest({
+  dir: "./",
+});
+
+const customJestConfig = {
   testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
+  moduleDirectories: ["node_modules", "<rootDir>/"],
   moduleNameMapper: {
-    "\\.svg$": "<rootDir>/src/__mocks__/svg.js",
-    "\\.scss$": "<rootDir>/src/__mocks__/empty.js",
+    "\\.svg$": "<rootDir>/__mocks__/svg.js",
+    "\\.scss$": "<rootDir>/__mocks__/empty.js",
   },
 };
+
+module.exports = createJestConfig(customJestConfig);

@@ -80,17 +80,19 @@ function Calculator(props) {
       <div className={styles.conditions}>
         <div className={styles.condition}>
           <span className={styles.condition__name}>{t.take}</span>
-          <span>{formatCurrency(sum)}</span>
+          <span data-testid="calculator-value">{formatCurrency(sum)}</span>
         </div>
         <div className={styles.condition}>
           <span className={styles.condition__name}>{t.percentages}</span>
-          <span>{formatCurrency(calculateInterest(sum, days, discount))}</span>
+          <span data-testid="calculator-value">
+            {formatCurrency(calculateInterest(sum, days, discount))}
+          </span>
         </div>
         <div className={styles.condition}>
           <span className={styles.condition__name}>
             {t.repayTo} {formatDate(Date.now() + days * 1000 * 60 * 60 * 24)}
           </span>
-          <span>
+          <span data-testid="calculator-value">
             {formatCurrency(calculateInterest(sum, days, discount) + sum)}
           </span>
         </div>
