@@ -74,7 +74,7 @@ function BurgerMenu(props) {
         </h4>
         <nav className={styles.burgerMenu__nav}>
           {t.links.map((link) => (
-            <Link href={link.to} key={link.to}>
+            <Link href={link.to} key={link.to} prefetch={false}>
               <a className={styles.burgerMenu__link} onClick={closeBurger}>
                 {link.content}
               </a>
@@ -102,7 +102,7 @@ function BurgerMenu(props) {
             <span className={styles.burgerMenu__languageWord}>
               {t.BurgerMenu.language}
             </span>
-            <Link href="/" locale="ru">
+            <Link href="/" locale="ru" prefetch={false}>
               <a
                 className={styles.burgerMenu__language}
                 ref={ruLanguageRef}
@@ -111,7 +111,7 @@ function BurgerMenu(props) {
                 RU
               </a>
             </Link>
-            <Link href="/" locale="uk">
+            <Link href="/" locale="uk" prefetch={false}>
               <a
                 className={styles.burgerMenu__language}
                 ref={ukLanguageRef}

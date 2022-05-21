@@ -47,7 +47,7 @@ function LendingServices() {
       {!isPhone && (
         <div className={styles.lendingServices__links}>
           {t.links.map((link) => (
-            <Link key={link.content} href={link.to}>
+            <Link key={link.content} href={link.to} prefetch={false}>
               <a className={styles.lendingServices__link}>{link.content}</a>
             </Link>
           ))}
@@ -60,7 +60,7 @@ function LendingServices() {
             ref={linksMobileRef}
           >
             {t.links.map((link) => (
-              <Link key={link.content} href={link.to}>
+              <Link key={link.content} href={link.to} prefetch={false}>
                 <a className={styles.lendingServices__mobileLink}>
                   <span>{link.content}</span>
                   <ArrowSvg />

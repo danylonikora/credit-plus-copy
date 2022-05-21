@@ -70,18 +70,18 @@ function Navbar() {
       {!isTabletOrNotebook && (
         <>
           {t.links.map((link) => (
-            <Link href={link.to} key={link.content}>
+            <Link href={link.to} key={link.content} prefetch={false}>
               <a className={styles.navbar__link}>{link.content}</a>
             </Link>
           ))}
           <PhoneInfo color="#003366" />
           <div className={styles.navbar__languages}>
-            <Link href="/" locale="uk">
+            <Link href="/" locale="uk" prefetch={false}>
               <a title="Українська  мова" ref={ukLanguageRef}>
                 UA
               </a>
             </Link>
-            <Link href="/" locale="ru">
+            <Link href="/" locale="ru" prefetch={false}>
               <a title="Русский язык" ref={ruLanguageRef}>
                 RU
               </a>
