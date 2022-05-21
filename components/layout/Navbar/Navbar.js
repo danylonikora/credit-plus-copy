@@ -14,7 +14,7 @@ function Navbar() {
   const [isBurgerActive, setIsBurgerActive] = useState(false);
   const [isTabletOrNotebook, setIsTabletOrNotebook] = useState();
   const [isMobile, setIsMobile] = useState();
-  const { locale } = useRouter();
+  const { locale, pathname } = useRouter();
   const { Navbar: t } = useTranslation();
 
   const burgerTogglerRef = useRef();
@@ -76,12 +76,12 @@ function Navbar() {
           ))}
           <PhoneInfo color="#003366" />
           <div className={styles.navbar__languages}>
-            <Link href="/" locale="uk" prefetch={false}>
+            <Link href={pathname} locale="uk" prefetch={false}>
               <a title="Українська  мова" ref={ukLanguageRef}>
                 UA
               </a>
             </Link>
-            <Link href="/" locale="ru" prefetch={false}>
+            <Link href={pathname} locale="ru" prefetch={false}>
               <a title="Русский язык" ref={ruLanguageRef}>
                 RU
               </a>

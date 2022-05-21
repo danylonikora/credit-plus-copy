@@ -10,7 +10,7 @@ import useTranslation from "../../../utils/useTranslation";
 
 function BurgerMenu(props) {
   // toggleBurger
-  const { locale } = useRouter();
+  const { locale, pathname } = useRouter();
   const { Navbar: t } = useTranslation();
 
   const overlayRef = useRef();
@@ -102,7 +102,7 @@ function BurgerMenu(props) {
             <span className={styles.burgerMenu__languageWord}>
               {t.BurgerMenu.language}
             </span>
-            <Link href="/" locale="ru" prefetch={false}>
+            <Link href={pathname} locale="ru" prefetch={false}>
               <a
                 className={styles.burgerMenu__language}
                 ref={ruLanguageRef}
@@ -111,7 +111,7 @@ function BurgerMenu(props) {
                 RU
               </a>
             </Link>
-            <Link href="/" locale="uk" prefetch={false}>
+            <Link href={pathname} locale="uk" prefetch={false}>
               <a
                 className={styles.burgerMenu__language}
                 ref={ukLanguageRef}
