@@ -3,6 +3,8 @@ import DocumentSvg from "/public/images/document-icon.svg";
 import * as styles from "./About.module.scss";
 import classNames from "classnames";
 import useTranslation from "../../utils/useTranslation";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 function About() {
   const { About: t } = useTranslation();
@@ -18,37 +20,43 @@ function About() {
             <div className={styles.about__paragraphContainer}>
               <p>{t.p1_3}</p>
             </div>
-            <div className={styles.about__linkContainer}>
-              <a
-                href="#"
-                className={classNames(
-                  "markdown__link",
-                  "markdown__bold",
-                  styles.about__link
-                )}
-              >
-                <DocumentSvg />
-                {t.a1}
+            <Link href={t.a1.to}>
+              <a>
+                <div className={styles.about__linkContainer}>
+                  <DocumentSvg />
+                  <span
+                    className={classNames(
+                      "markdown__link",
+                      "markdown__bold",
+                      styles.about__link
+                    )}
+                  >
+                    {t.a1.text}
+                  </span>
+                </div>
               </a>
-            </div>
+            </Link>
           </div>
           <div className={styles.about__paragraphWrapper}>
             <div className={styles.about__paragraphContainer}>
               <p>{t.p1_4}</p>
             </div>
-            <div className={styles.about__linkContainer}>
-              <a
-                href="#"
-                className={classNames(
-                  "markdown__link",
-                  "markdown__bold",
-                  styles.about__link
-                )}
-              >
-                <DocumentSvg />
-                {t.a2}
+            <Link href={t.a2.to}>
+              <a>
+                <div className={styles.about__linkContainer}>
+                  <DocumentSvg />
+                  <span
+                    className={classNames(
+                      "markdown__link",
+                      "markdown__bold",
+                      styles.about__link
+                    )}
+                  >
+                    {t.a2.text}
+                  </span>
+                </div>
               </a>
-            </div>
+            </Link>
           </div>
           <h4>{t.h4_1}</h4>
           <ul>

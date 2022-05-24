@@ -37,6 +37,9 @@
   }
 
   &__linkContainer {
+    @extend .flex--row;
+    gap: 1rem;
+    align-items: center;
     white-space: nowrap;
     margin-left: 2rem;
 
@@ -48,13 +51,13 @@
 
   &__paragraphContainer {
     padding-right: 2rem;
-    border-right: 1px solid #E0E9F2;
+    border-right: 1px solid #e0e9f2;
 
     @media (max-width: 800px) {
       padding-right: 0;
       padding-bottom: 2rem;
       border-right: none;
-      border-bottom: 1px solid #E0E9F2;
+      border-bottom: 1px solid #e0e9f2;
     }
   }
 
