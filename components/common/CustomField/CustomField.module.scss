@@ -1,0 +1,63 @@
+@import "abstracts/vars";
+@import "components/containers";
+
+.fieldContainer {
+  @extend .flex--column;
+  gap: 1rem;
+}
+
+.textArea {
+  resize: none;
+  font-family: "Avenir Next Cyr";
+  line-height: 150%;
+  font-size: 1.6rem;
+}
+
+.input,
+.textArea,
+.select {
+  padding: 0.8rem;
+
+  color: $txt-dark-blue;
+  outline: none;
+  border: 1px solid $txt-grey;
+  border-radius: 4px;
+
+  &::placeholder {
+    color: $txt-grey-blue;
+    opacity: 0.5;
+  }
+
+  &:focus {
+    border: 1px solid $black;
+    transition: border 0.3s ease-out;
+  }
+}
+
+.label {
+  align-self: flex-start;
+
+  font-weight: 600;
+  cursor: default;
+}
+
+.select {
+  position: relative;
+
+  & select {
+    width: 100%;
+    position: relative;
+    appearance: none;
+  }
+
+  &::after {
+    content: url("/images/select-arrow.svg");
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+.error {
+  color: #ff3306;
+}
