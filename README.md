@@ -13,3 +13,4 @@ https://credit-plus-copy.vercel.app/
   - [Next](https://nextjs.org/)
   - [Glide.js](https://glidejs.com/) - image slider
   - [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) - testing
+  - [Formik](https://formik.org/) and [Yup](https://github.com/jquense/yup) - forms and validation
