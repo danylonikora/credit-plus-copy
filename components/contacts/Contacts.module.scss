@@ -1,0 +1,201 @@
+@import "abstracts/vars";
+@import "components/containers";
+@import "components/headings";
+@import "components/buttons";
+
+.container {
+  @extend .section-container;
+}
+
+.sectionHeading {
+  @extend .heading--2;
+  margin-bottom: 4rem;
+}
+
+.cards {
+  @extend .flex--row;
+  gap: 4rem;
+
+  @media(max-width: 930px) {
+    flex-direction: column;
+  }
+}
+
+.column_1 {
+  @extend .flex--column;
+  gap: 4rem;
+  height: fit-content;
+  flex: 1;
+}
+
+.card {
+  @extend .flex--column;
+  gap: 2rem;
+  padding: 4rem 3rem;
+  height: 100%;
+
+  background-color: $white;
+  box-shadow: 0px 2px 15px rgba(0, 51, 102, 0.21);
+  border-radius: 10px;
+
+  @media(max-width: 930px) {
+    max-width: none;
+  }
+}
+
+.cardHeading {
+  @extend .heading--3;
+  margin-bottom: 1rem;
+}
+
+.contactWithIcon {
+  @extend .flex--row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.link {
+  text-decoration: underline;
+  color: $btn-blue;
+  font-weight: 600;
+}
+
+.column_2 {
+  line-height: 150%;
+  flex: 1;
+}
+
+.fieldContainer {
+  @extend .flex--column;
+  gap: 1rem;
+}
+
+.textArea {
+  height: 120px;
+}
+
+.phoneInput {
+  color: $txt-dark-blue;
+  outline: none;
+
+  &::placeholder {
+    color: $txt-grey-blue;
+    opacity: 0.5;
+  }
+}
+
+.input {
+  &:focus {
+    border: 1px solid $black;
+    transition: border 0.3s ease-out;
+  }
+}
+
+.label {
+  align-self: flex-start;
+
+  font-weight: 600;
+  cursor: default;
+}
+
+.sendBtn {
+  @extend .btn--orange;
+  align-self: center;
+  font-weight: 600;
+}
+
+.fileInput {
+  width: 0.1px;
+  height: 0.1px;
+}
+
+.fileInputLabel {
+  @extend .flex--row;
+  gap: 1rem;
+  align-items: center;
+
+  color: $btn-orange;
+  font-weight: 600;
+
+  @media (max-width: 380px) {
+    align-self: flex-start;
+  }
+}
+
+.fileInputLabelContainer {
+  @extend .flex--row;
+  gap: 1rem;
+  align-items: center;
+
+  @media (max-width: 380px) {
+    flex-direction: column;
+    align-self: flex-start;
+    gap: .5rem;
+  }
+}
+
+.fileLimitations {
+  font-size: 1.2rem;
+  color: $txt-grey-blue;
+}
+
+.phoneInputContainer {
+  @extend .flex--row;
+  align-items: center;
+  overflow: hidden;
+  height: 3.5rem;
+
+  border: 1px solid $txt-grey;
+  border-radius: 4px;
+}
+
+.phoneInput {
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  height: 100%;
+}
+
+.phoneInput:focus {
+  outline: none;
+}
+
+.countryPhoneCode {
+  @extend .flex--row;
+  height: 100%;
+  padding: 0 0.8rem;
+  align-items: center;
+
+  background-color: #e0e9f2;
+  border-right: 1px solid $txt-grey;
+  font-weight: 600;
+  color: $txt-grey-blue;
+}
+
+.checkBox {
+  @extend .flex--row;
+  align-self: flex-start;
+  gap: 1rem;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.checkBoxField {
+  @extend .flex--row;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+
+  border: 1px solid $btn-orange;
+  border-radius: 4px;
+  transition: box-shadow .3s ease-out;
+
+  &:hover {
+    box-shadow: 0px 0px 4px $btn-orange;
+  }
+}
+
+.error {
+  color: #ff3306;
+}
