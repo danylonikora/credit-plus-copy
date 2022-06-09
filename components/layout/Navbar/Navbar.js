@@ -37,7 +37,7 @@ function Navbar() {
   useEffect(() => {
     setIsTabletOrNotebook(isMediaMatch(1200));
     setIsMobile(isMediaMatch(400));
-  });
+  }, []);
 
   useEffect(() => {
     if (isTabletOrNotebook) {

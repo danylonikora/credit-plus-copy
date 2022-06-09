@@ -38,11 +38,16 @@ function BurgerMenu(props) {
       overlayRef.current.style.height = window.innerHeight + "px";
     }
 
+    function closeBurger() {
+      burgerMenuRef.current.style.marginRight = "-300px";
+      setTimeout(props.toggleBurger, 200);
+    }
+
     return () => {
       document.body.style.overflow = "visible";
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [props.toggleBurger]);
 
   useEffect(() => {
     const activeClass = styles.burgerMenu__activeLanguage;
@@ -54,11 +59,6 @@ function BurgerMenu(props) {
       ruLanguageRef.current.classList.add(activeClass);
     }
   }, [locale]);
-
-  function closeBurger() {
-    burgerMenuRef.current.style.marginRight = "-300px";
-    setTimeout(props.toggleBurger, 200);
-  }
 
   return (
     <>

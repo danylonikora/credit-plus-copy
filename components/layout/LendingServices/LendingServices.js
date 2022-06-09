@@ -22,7 +22,11 @@ function LendingServices() {
   }, []);
 
   useEffect(() => {
+    let showMoreRefValue = null;
+
     if (!showMoreRef.current) return;
+
+    showMoreRefValue = showMoreRef.current;
 
     showMoreRef.current.addEventListener("click", handleClick);
     function handleClick() {
@@ -36,8 +40,8 @@ function LendingServices() {
     }
 
     return () => {
-      if (!showMoreRef.current) return;
-      showMoreRef.current.removeEventListener("click", handleClick);
+      if (!showMoreRefValue) return;
+      showMoreRefValue.removeEventListener("click", handleClick);
     };
   }, [isShowMore, isPhone]);
 

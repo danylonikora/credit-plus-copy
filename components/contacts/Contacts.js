@@ -74,7 +74,7 @@ function Contacts() {
       const element = document.getElementById(fieldErrorNames[0]);
 
       element.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, [isSubmitting]);
+    }, [isSubmitting, isValid, errors]);
 
     return null;
   }

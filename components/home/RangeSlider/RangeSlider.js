@@ -31,7 +31,7 @@ function RangeSlider(props) {
       ${selectedColor} 0%, ${selectedColor} ${roundedSelectedSegment}%, 
       ${unselectedColor} ${roundedSelectedSegment}%, ${unselectedColor} 100%
     )`;
-  }, [props.value]);
+  }, [props.value, props.max, props.min]);
 
   return (
     <div className={styles.rangeSlider}>
