@@ -19,6 +19,11 @@ function BurgerMenu(props) {
   const ukLanguageRef = useRef();
   const ruLanguageRef = useRef();
 
+  function closeBurger() {
+    burgerMenuRef.current.style.marginRight = "-300px";
+    setTimeout(props.toggleBurger, 200);
+  }
+
   useEffect(() => {
     handleResize();
     setTimeout(() => {
@@ -38,16 +43,12 @@ function BurgerMenu(props) {
       overlayRef.current.style.height = window.innerHeight + "px";
     }
 
-    function closeBurger() {
-      burgerMenuRef.current.style.marginRight = "-300px";
-      setTimeout(props.toggleBurger, 200);
-    }
-
     return () => {
       document.body.style.overflow = "visible";
       window.removeEventListener("resize", handleResize);
     };
-  }, [props.toggleBurger]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const activeClass = styles.burgerMenu__activeLanguage;
